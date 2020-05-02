@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="rps.css" />
-		<title>Rock Paper Scissors</title>
-	</head>
 
-	<body>
-		<header class="header">
-			<h1>
-				- Rock Paper Scissors -
-			</h1>
-		</header>
+<head>
+	<link rel="stylesheet" href="rps.css" />
+	<title>Rock Paper Scissors</title>
+</head>
 
-		<div id="pScorDiv">
-			<p class="pScoreText"></p>
-			<p class="pScore"></p>
+<body>
+	<header class="header">
+		<h1>
+			- Rock Paper Scissors -
+		</h1>
+	</header>
+
+	<div id="pScorDiv">
+		<p class="pScoreText"></p>
+		<p class="pScore"></p>
+	</div>
+
+	<div id="cScoreDiv">
+		<p class="cScoreText"></p>
+		<p class="cScore"></p>
+	</div>
+
+	<div>
+		<p class="weapon">
+			Choose your weapon:
+		</p>
+	</div>
+
+	<div class="divBtnBkg">
+		<div class="btnWrapper">
+			<button class="rockBtn"></button>
+			<button class="paperBtn"></button>
+			<button class="scissorsBtn"></button>
 		</div>
+	</div>
 
-		<div id="cScoreDiv">
-			<p class="cScoreText"></p>
-			<p class="cScore"></p>
-		</div>
+	<div>
+		<p id="rank">Can you beat the computer? Play to find out!</p>
+	</div>
 
-		<div>
-			<p class="weapon">
-				Choose your weapon:
-			</p>
-		</div>
+	<div>
+		<p id="choices"></p>
+	</div>
 
-		<div class="divBtnBkg">
-			<div class="btnWrapper">
-				<button class="rockBtn"></button>
-				<button class="paperBtn"></button>
-				<button class="scissorsBtn"></button>
-			</div>
-		</div>
+	<div>
+		<p id="winner"></p>
+	</div>
 
-		<div>
-			<p id="rank">Can you beat the computer? Play to find out!</p>
-		</div>
+	<script type="text/javascript" src="rps.js"></script>
+</body>
 
-		<div>
-			<p id="choices"></p>
-		</div>
-
-		<div>
-			<p id="winner"></p>
-		</div>
-
-		<script type="text/javascript" src="rps.js"></script>
-	</body>
 </html>
