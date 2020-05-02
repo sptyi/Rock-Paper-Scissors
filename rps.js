@@ -1,6 +1,14 @@
 const header = document.querySelector('.header');
 const weapon = document.querySelector('.weapon');
-const outcome = document.querySelector('.outcome');
+const choices = document.querySelector('#choices');
+const pScoreDiv = document.querySelector('#pScoreDiv');
+const pScore = document.querySelector('.pScore');
+const pScoreText = document.querySelector('.pScoreText');
+const cScoreDiv = document.querySelector('#cScoreDiv');
+const cScore = document.querySelector('.cScore');
+const cScoreText = document.querySelector('.cScoreText');
+const rank = document.querySelector('#rank');
+const winner = document.querySelector('#winner');
 const paperBtn = document.querySelector('.paperBtn');
 const scissorsBtn = document.querySelector('.scissorsBtn');
 const rockBtn = document.querySelector('.rockBtn');
@@ -11,12 +19,35 @@ paperBtn.addEventListener('click', () => {
 	playRound('paper');
 });
 
+paperBtn.addEventListener('mouseover', () => {
+	weapon.textContent = 'Paper?';
+});
+
+paperBtn.addEventListener('mouseout', () => {
+	weapon.textContent = 'Choose your weapon:';
+});
+
 scissorsBtn.addEventListener('click', () => {
 	playRound('scissors');
+});
+scissorsBtn.addEventListener('mouseover', () => {
+	weapon.textContent = 'Scissors?';
+});
+
+scissorsBtn.addEventListener('mouseout', () => {
+	weapon.textContent = 'Choose your weapon:';
 });
 
 rockBtn.addEventListener('click', () => {
 	playRound('rock');
+});
+
+rockBtn.addEventListener('mouseover', () => {
+	weapon.textContent = 'Rock?';
+});
+
+rockBtn.addEventListener('mouseout', () => {
+	weapon.textContent = 'Choose your weapon:';
 });
 
 function computerPlay() {
@@ -34,63 +65,43 @@ function computerPlay() {
 
 function playerPaper() {
 	if (computerSelection == 'paper') {
-		outcome.textContent = 'This round is a draw! You both chose Paper.';
-		console.log('This round is a draw! You both chose Paper.');
-		return 'This round is a draw! You both chose Paper.';
+		winner.textContent = 'This round is a draw! You both chose paper.';
 	} else if (computerSelection == 'scissors') {
 		computerScore++;
-		outcome.textContent = 'You lose this round! Scissors beats Paper.';
-		console.log('You lose this round! Scissors beats Paper.');
-		return 'You lose this round! Scissors beats Paper.';
+		winner.textContent = 'You lose this round! Scissors beats paper.';
 	} else if (computerSelection == 'rock') {
 		playerScore++;
-		outcome.textContent = 'You win this round! paper beats Rock.';
-		console.log('You win this round! Paper beats Rock.');
-		return 'You win this round! paper beats Rock.';
+		winner.textContent = 'You win this round! paper beats rock.';
 	}
 }
 
 function playerScissors() {
 	if (computerSelection == 'paper') {
 		playerScore++;
-		outcome.textContent = 'You win this round! Scissors beats Paper.';
-		console.log('You win this round! Scissors beats Paper.');
-		return 'You win this round! Scissors beats Paper.';
+		winner.textContent = 'You win this round! Scissors beats paper.';
 	} else if (computerSelection == 'scissors') {
-		outcome.textContent = 'This round is a draw! You both chose Scissors.';
-		console.log('This round is a draw! You both chose Scissors.');
-		return 'This round is a draw! You both chose Scissors.';
+		winner.textContent = 'This round is a draw! You both chose scissors.';
 	} else if (computerSelection == 'rock') {
 		computerScore++;
-		outcome.textContent = 'You lose this round! Rock beats Scissors.';
-		console.log('You lose this round! Rock beats Scissors.');
-		return 'You lose this round! Rock beats Scissors.';
+		winner.textContent = 'You lose this round! Rock beats scissors.';
 	}
 }
 
 function playerRock() {
 	if (computerSelection == 'paper') {
 		computerScore++;
-		outcome.textContent = 'You lose this round! Paper beats Rock.';
-		console.log('You lose this round! Paper beats Rock.');
-		return 'You lose this round! Paper beats Rock.';
+		winner.textContent = 'You lose this round! Paper beats rock.';
 	} else if (computerSelection == 'scissors') {
 		playerScore++;
-		outcome.textContent = 'You win this round! Rock beats Scissors.';
-		console.log('You win this round! Rock beats Scissors.');
-		return 'You win this round! Rock beats Scissors.';
+		winner.textContent = 'You win this round! Rock beats scissors.';
 	} else if (computerSelection == 'rock') {
-		outcome.textContent = 'This round is a draw! You both chose Rock.';
-		console.log('This round is a draw! You both chose Rock.');
-		return 'This round is a draw! You both chose Rock.';
+		winner.textContent = 'This round is a draw! You both chose rock.';
 	}
 }
 
 function playRound(playerSelection) {
-	console.log('You chose: ' + playerSelection);
 	computerSelection = computerPlay();
-	outcome.textContent = 'Computer chose: ' + computerSelection;
-	console.log('Computer chose: ' + computerSelection);
+	choices.textContent = 'Computer chose ' + computerSelection + '.';
 	if (playerSelection == 'paper') {
 		playerPaper();
 	} else if (playerSelection == 'scissors') {
@@ -102,34 +113,15 @@ function playRound(playerSelection) {
 }
 
 function score(playerScore, computerScore) {
-	//let playerScore;
-	//let computerScore;
-	console.log(
-		'Player score: ' +
-			playerScore +
-			'. ' +
-			'Computer score: ' +
-			computerScore +
-			'.'
-	);
-	let scoreDiv = document.createElement('div');
-	scoreDiv.class = 'score';
-	scoreDiv.innerHTML =
-		'Player score: ' +
-		playerScore +
-		'. ' +
-		'Computer score: ' +
-		computerScore +
-		'.';
+	pScore.textContent = ' - ' + playerScore + ' - ';
+	pScoreText.textContent = 'You';
+	cScore.textContent = ' - ' + computerScore + ' - ';
+	cScoreText.textContent = 'Computer';
 	if (playerScore > computerScore) {
-		console.log("You're winning!");
-		return "You're winning!!";
+		rank.textContent = "You're winning!";
 	} else if (computerScore > playerScore) {
-		console.log("Sorry, but you're losing.");
-		return "Sorry, but you're losing.";
+		rank.textContent = "Uh-oh, you're losing.";
 	} else {
-		console.log("So close, but it's a tie.");
-		return "So close, but it's a tie.";
+		rank.textContent = "So close, but it's a tie.";
 	}
-	document.body.appendChild(scoreDiv);
 }

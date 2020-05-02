@@ -12,6 +12,16 @@
 			</h1>
 		</header>
 
+		<div id="pScorDiv">
+			<p class="pScoreText"></p>
+			<p class="pScore"></p>
+		</div>
+
+		<div id="cScoreDiv">
+			<p class="cScoreText"></p>
+			<p class="cScore"></p>
+		</div>
+
 		<div>
 			<p class="weapon">
 				Choose your weapon:
@@ -19,15 +29,23 @@
 		</div>
 
 		<div class="divBtnBkg">
-			<span class="btnWrapper">
-				<button class="paperBtn">Paper</button>
-				<button class="scissorsBtn">Scissors</button>
-				<button class="rockBtn">Rock</button>
-			</span>
+			<div class="btnWrapper">
+				<button class="paperBtn"></button>
+				<button class="scissorsBtn"></button>
+				<button class="rockBtn"></button>
+			</div>
 		</div>
 
 		<div>
-			<p class="outcome"></p>
+			<p id="rank">Can you beat the computer? Play to find out!</p>
+		</div>
+
+		<div>
+			<p id="choices"></p>
+		</div>
+
+		<div>
+			<p id="winner"></p>
 		</div>
 
 		<script type="text/javascript" src="rps.js"></script>

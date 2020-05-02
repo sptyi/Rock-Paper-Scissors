@@ -1,16 +1,60 @@
 * {
 	text-align: center;
 	background-color: black;
-	color: darkgray;
+	color: darkgrey;
 }
 
 .header {
+	font-size: 25px;
 }
 
 .weapon {
+	font-size: 20px;
 }
 
-.outcome {
+#winner {
+	font-size: 18px;
+}
+
+#rank {
+	font-size: 25px;
+}
+
+#choices {
+	font-size: 18px;
+}
+
+#pScoreDiv {
+}
+
+.pScoreText {
+	position: fixed;
+	left: 25%;
+	top: 50px;
+	font-size: 25px;
+}
+.pScore {
+	position: fixed;
+	left: 25%;
+	top: 75px;
+	font-size: 25px;
+}
+
+#cScoreDiv {
+}
+
+.cScoreText {
+	position: fixed;
+	right: 25%;
+	top: 50px;
+	font-size: 25px;
+}
+
+.cScore {
+	position: fixed;
+	right: 25%;
+	top: 75px;
+	font-size: 25px;
 }
 
 .divBtnBkg {
@@ -24,21 +68,28 @@
 
 .btnWrapper {
 	top: 50%;
+	height: inherit;
+	width: inherit;
 }
 
 .paperBtn {
 	position: fixed;
-	top: inherit;
 	left: 300px;
+	height: inherit;
+	width: 200px;
+	opacity: 10%;
 }
 
 .scissorsBtn {
-	position: fixed;
-	top: inherit;
+	height: inherit;
+	width: 200px;
+	opacity: 10%;
 }
 
 .rockBtn {
 	position: fixed;
 	right: 250px;
-	top: inherit;
+	height: inherit;
+	width: 200px;
+	opacity: 10%;
 }
