@@ -9,9 +9,9 @@ const cScore = document.querySelector('.cScore');
 const cScoreText = document.querySelector('.cScoreText');
 const rank = document.querySelector('#rank');
 const winner = document.querySelector('#winner');
+const rockBtn = document.querySelector('.rockBtn');
 const paperBtn = document.querySelector('.paperBtn');
 const scissorsBtn = document.querySelector('.scissorsBtn');
-const rockBtn = document.querySelector('.rockBtn');
 let playerScore = 0;
 let computerScore = 0;
 
