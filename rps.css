@@ -10,6 +10,7 @@
 
 .weapon {
 	font-size: 20px;
+	margin-top: 50px;
 }
 
 #winner {
@@ -30,13 +31,13 @@
 .pScoreText {
 	position: fixed;
 	left: 25%;
-	top: 50px;
+	top: 60%;
 	font-size: 25px;
 }
 .pScore {
 	position: fixed;
 	left: 25%;
-	top: 75px;
+	top: 65%;
 	font-size: 25px;
 }
 
@@ -46,14 +47,14 @@
 .cScoreText {
 	position: fixed;
 	right: 25%;
-	top: 50px;
+	top: 60%;
 	font-size: 25px;
 }
 
 .cScore {
 	position: fixed;
 	right: 25%;
-	top: 75px;
+	top: 65%;
 	font-size: 25px;
 }
 
