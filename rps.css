@@ -27,9 +27,6 @@
 	font-size: 18px;
 }
 
-#pScoreDiv {
-}
-
 .pScoreText {
 	position: fixed;
 	left: 25%;
@@ -41,9 +38,6 @@
 	left: 25%;
 	top: 65%;
 	font-size: 25px;
-}
-
-#cScoreDiv {
 }
 
 .cScoreText {
@@ -58,9 +52,6 @@
 	right: 25%;
 	top: 65%;
 	font-size: 25px;
-}
-
-.divBtnBkg {
 }
 
 .btnWrapper {
