@@ -107,3 +107,24 @@
 	border: none;
 	outline: none;
 }
+
+footer {
+	display: inline-block;
+	margin-top: 50px;
+}
+
+a:link {
+	color: blue;
+}
+
+a:visited {
+	color: blue;
+}
+
+a:hover {
+	color: ghostwhite;
+}
+
+a:active {
+	color: ghostwhite;
+}
