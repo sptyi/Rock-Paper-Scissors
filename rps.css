@@ -74,16 +74,34 @@
 	text-shadow: #000 2px 2px 5px;
 }
 
+.rockBtn:hover {
+	opacity: 0.75;
+	transform: scale(1.05);
+}
+
+.rockBtn:active {
+	transform: scale(0.98);
+}
+
 .paperBtn {
 	margin-right: 50px;
 	margin-left: 50px;
-	height: 250px;
-	width: 190px;
+	height: 230px;
+	width: 170px;
 	background: url(./assets/paper.svg);
 	background-repeat: no-repeat;
 	border: none;
 	outline: none;
 	text-shadow: #000 2px 2px 5px;
+}
+
+.paperBtn:hover {
+	opacity: 0.75;
+	transform: scale(1.05);
+}
+
+.paperBtn:active {
+	transform: scale(0.98);
 }
 
 .scissorsBtn {
@@ -99,17 +117,27 @@
 	outline: none;
 }
 
+.scissorsBtn:hover {
+	opacity: 0.75;
+	transform: scale(1.05);
+}
+
+.scissorsBtn:active {
+	transform: scale(0.98);
+}
+
 footer {
 	display: inline-block;
 	margin-top: 50px;
 }
 
 a:link {
-	color: blue;
+	color: black;
+	text-decoration: none;
 }
 
 a:visited {
-	color: blue;
+	color: black;
 }
 
 a:hover {
