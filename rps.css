@@ -3,10 +3,18 @@
 	background-color: #333;
 	color: whitesmoke;
 	text-shadow: #000 2px 2px 5px;
+	margin: auto;
+	padding: 0px;
 }
 
 .header {
 	font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+	.header {
+		font-size: 15px;
+	}
 }
 
 .weapon {
@@ -15,63 +23,129 @@
 	margin-bottom: 40px;
 }
 
+@media screen and (max-width: 600px) {
+	.weapon {
+		font-size: 10px;
+	}
+}
+
 #winner {
 	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+	#winner {
+		font-size: 8px;
+	}
 }
 
 #rank {
 	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+	#rank {
+		font-size: 15px;
+	}
 }
 
 #choices {
 	font-size: 18px;
 }
 
-.pScoreText {
-	position: fixed;
-	left: 25%;
-	top: 60%;
-	font-size: 25px;
+@media screen and (max-width: 600px) {
+	#choices {
+		font-size: 8px;
+	}
 }
-.pScore {
+
+#pScoreDive {
+	position: absolute;
+	left: 25%;
+	top: 65%;
+}
+
+#cScoreDiv {
+	position: absolute;
+	right: 25%;
+	top: 65%;
+}
+
+.pScoreText {
 	position: fixed;
 	left: 25%;
 	top: 65%;
 	font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+	.pScoreText {
+		font-size: 15px;
+	}
+}
+
+.pScore {
+	position: fixed;
+	left: 25%;
+	top: 70%;
+	font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+	.pScore {
+		font-size: 15px;
+	}
 }
 
 .cScoreText {
 	position: fixed;
 	right: 25%;
-	top: 60%;
+	top: 65%;
 	font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+	.cScoreText {
+		font-size: 15px;
+	}
 }
 
 .cScore {
 	position: fixed;
 	right: 25%;
-	top: 65%;
+	top: 70%;
 	font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+	.cScore {
+		font-size: 15px;
+	}
 }
 
 .btnWrapper {
 	top: 50%;
 	height: inherit;
 	width: inherit;
+	display: grid;
+	grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+	grid-template-rows: 200px;
+	justify-items: center;
+	align-items: center;
+	margin-bottom: 50px;
 }
 
 .rockBtn {
-	margin-right: 50px;
-	position: fixed;
-	left: 200px;
-	height: 200px;
-	width: 300px;
 	background: url(./assets/rock.svg);
 	background-repeat: no-repeat;
-	border-radius: 50%;
 	border: none;
 	outline: none;
-	text-shadow: #000 2px 2px 5px;
+	grid-column: 2;
+	height: 200px;
+	width: 275px;
+	margin-top: 10px;
 }
 
 .rockBtn:hover {
@@ -84,15 +158,13 @@
 }
 
 .paperBtn {
-	margin-right: 50px;
-	margin-left: 50px;
-	height: 230px;
-	width: 170px;
 	background: url(./assets/paper.svg);
 	background-repeat: no-repeat;
 	border: none;
 	outline: none;
-	text-shadow: #000 2px 2px 5px;
+	grid-column: 3;
+	height: 210px;
+	width: 160px;
 }
 
 .paperBtn:hover {
@@ -105,16 +177,13 @@
 }
 
 .scissorsBtn {
-	margin-left: 25px;
-	position: fixed;
-	right: 250px;
-	height: 200px;
-	width: 200px;
 	background: url(./assets/scissors.svg);
 	background-repeat: no-repeat;
-	border-radius: 5%;
 	border: none;
 	outline: none;
+	grid-column: 4;
+	height: 200px;
+	width: 200px;
 }
 
 .scissorsBtn:hover {
@@ -129,6 +198,12 @@
 footer {
 	display: inline-block;
 	margin-top: 50px;
+}
+
+@media screen and (max-width: 600px) {
+	footer {
+		font-size: 8px;
+	}
 }
 
 a:link {
