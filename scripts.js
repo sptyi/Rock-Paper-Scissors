@@ -15,6 +15,8 @@ const scissorsBtn = document.querySelector('.scissorsBtn');
 const restartBtn = document.querySelector('.restartBtn');
 let playerScore = 0;
 let computerScore = 0;
+let gameOn = false;
+hideRestart();
 
 paperBtn.addEventListener('click', () => {
 	playRound('paper');
@@ -52,10 +54,16 @@ rockBtn.addEventListener('mouseout', () => {
 });
 
 restartBtn.addEventListener('click', () => {
-	restart();
+	if (gameOn == false) {
+		return;
+	} else {
+		gameOn = false;
+		restart();
+	}
 });
 
 function restart() {
+	hideRestart();
 	playerScore = 0;
 	computerScore = 0;
 	pScore.textContent = '';
@@ -65,6 +73,14 @@ function restart() {
 	winner.textContent = '';
 	choices.textContent = '';
 	rank.textContent = 'Play again!';
+}
+
+function hideRestart() {
+	if (gameOn == false) {
+		restartBtn.style.cssText += 'display: none';
+	} else {
+		restartBtn.style.cssText += 'display: initial';
+	}
 }
 
 function computerPlay() {
@@ -117,6 +133,8 @@ function playerRock() {
 }
 
 function playRound(playerSelection) {
+	gameOn = true;
+	hideRestart();
 	computerSelection = computerPlay();
 	choices.textContent = 'Computer chose ' + computerSelection + '.';
 	if (playerSelection == 'paper') {

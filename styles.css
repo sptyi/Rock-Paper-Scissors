@@ -1,4 +1,5 @@
 * {
+	font-family: 'Amatic SC', cursive;
 	text-align: center;
 	background-color: #333;
 	color: whitesmoke;
@@ -8,57 +9,57 @@
 }
 
 .header {
-	font-size: 25px;
+	font-size: 30px;
 	margin-top: 25px;
 }
 
 @media screen and (max-width: 600px) {
 	.header {
-		font-size: 15px;
+		font-size: 20px;
 	}
 }
 
 .weapon {
-	font-size: 20px;
-	margin-top: 50px;
+	font-size: 25px;
+	margin-top: 30px;
 	margin-bottom: 50px;
 }
 
 @media screen and (max-width: 600px) {
 	.weapon {
-		font-size: 10px;
+		font-size: 15px;
 	}
 }
 
 #winner {
-	font-size: 18px;
+	font-size: 23px;
 	margin-bottom: 20px;
 }
 
 @media screen and (max-width: 600px) {
 	#winner {
-		font-size: 8px;
+		font-size: 13px;
 	}
 }
 
 #rank {
-	font-size: 25px;
+	font-size: 30px;
 	margin-bottom: 20px;
 }
 
 @media screen and (max-width: 600px) {
 	#rank {
-		font-size: 15px;
+		font-size: 20px;
 	}
 }
 
 #choices {
-	font-size: 18px;
+	font-size: 23px;
 }
 
 @media screen and (max-width: 600px) {
 	#choices {
-		font-size: 8px;
+		font-size: 13px;
 	}
 }
 
@@ -78,12 +79,12 @@
 	position: fixed;
 	left: 25%;
 	top: 65%;
-	font-size: 25px;
+	font-size: 30px;
 }
 
 @media screen and (max-width: 600px) {
 	.pScoreText {
-		font-size: 15px;
+		font-size: 20px;
 	}
 }
 
@@ -91,12 +92,12 @@
 	position: fixed;
 	left: 25%;
 	top: 70%;
-	font-size: 25px;
+	font-size: 30px;
 }
 
 @media screen and (max-width: 600px) {
 	.pScore {
-		font-size: 15px;
+		font-size: 20px;
 	}
 }
 
@@ -104,12 +105,12 @@
 	position: fixed;
 	right: 25%;
 	top: 65%;
-	font-size: 25px;
+	font-size: 30px;
 }
 
 @media screen and (max-width: 600px) {
 	.cScoreText {
-		font-size: 15px;
+		font-size: 20px;
 	}
 }
 
@@ -117,12 +118,12 @@
 	position: fixed;
 	right: 25%;
 	top: 70%;
-	font-size: 25px;
+	font-size: 30px;
 }
 
 @media screen and (max-width: 600px) {
 	.cScore {
-		font-size: 15px;
+		font-size: 20px;
 	}
 }
 
@@ -210,23 +211,26 @@
 }
 
 footer {
-	display: inline-block;
-	margin-top: 50px;
+	display: block;
+	position: absolute;
+	font-size: 18px;
+	top: 90vh;
+	left: 90vw;
 }
 
 @media screen and (max-width: 600px) {
 	footer {
-		font-size: 8px;
+		font-size: 13px;
 	}
 }
 
 a:link {
-	color: rgb(35, 35, 200);
+	color: black;
 	text-decoration: none;
 }
 
 a:visited {
-	color: rgb(35, 35, 200);
+	color: black;
 }
 
 a:hover {
