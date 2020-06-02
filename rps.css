@@ -9,6 +9,7 @@
 
 .header {
 	font-size: 25px;
+	margin-top: 25px;
 }
 
 @media screen and (max-width: 600px) {
@@ -19,8 +20,8 @@
 
 .weapon {
 	font-size: 20px;
-	margin-top: 25px;
-	margin-bottom: 40px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 @media screen and (max-width: 600px) {
@@ -149,8 +150,7 @@
 }
 
 .rockBtn:hover {
-	opacity: 0.75;
-	transform: scale(1.05);
+	transform: scale(1.1);
 }
 
 .rockBtn:active {
@@ -168,8 +168,7 @@
 }
 
 .paperBtn:hover {
-	opacity: 0.75;
-	transform: scale(1.05);
+	transform: scale(1.1);
 }
 
 .paperBtn:active {
@@ -187,11 +186,26 @@
 }
 
 .scissorsBtn:hover {
-	opacity: 0.75;
-	transform: scale(1.05);
+	transform: scale(1.1);
 }
 
 .scissorsBtn:active {
+	transform: scale(0.98);
+}
+
+.restartBtn {
+	outline: none;
+	border-radius: 5px;
+	width: 100px;
+	height: 25px;
+	margin-top: 25px;
+}
+
+.restartBtn:hover {
+	background-color: rgb(35, 35, 200);
+}
+
+.restartBtn:active {
 	transform: scale(0.98);
 }
 
@@ -207,12 +221,12 @@ footer {
 }
 
 a:link {
-	color: black;
+	color: rgb(35, 35, 200);
 	text-decoration: none;
 }
 
 a:visited {
-	color: black;
+	color: rgb(35, 35, 200);
 }
 
 a:hover {

@@ -12,6 +12,7 @@ const winner = document.querySelector('#winner');
 const rockBtn = document.querySelector('.rockBtn');
 const paperBtn = document.querySelector('.paperBtn');
 const scissorsBtn = document.querySelector('.scissorsBtn');
+const restartBtn = document.querySelector('.restartBtn');
 let playerScore = 0;
 let computerScore = 0;
 
@@ -49,6 +50,22 @@ rockBtn.addEventListener('mouseover', () => {
 rockBtn.addEventListener('mouseout', () => {
 	weapon.textContent = 'Choose your weapon:';
 });
+
+restartBtn.addEventListener('click', () => {
+	restart();
+});
+
+function restart() {
+	playerScore = 0;
+	computerScore = 0;
+	pScore.textContent = '';
+	cScore.textContent = '';
+	pScoreText.textContent = '';
+	cScoreText.textContent = '';
+	winner.textContent = '';
+	choices.textContent = '';
+	rank.textContent = 'Play again!';
+}
 
 function computerPlay() {
 	let num = Math.floor(Math.random() * 3);
@@ -114,9 +131,9 @@ function playRound(playerSelection) {
 
 function score(playerScore, computerScore) {
 	pScore.textContent = playerScore;
-	pScoreText.textContent = 'You';
+	pScoreText.textContent = 'Your Score:';
 	cScore.textContent = computerScore;
-	cScoreText.textContent = 'Computer';
+	cScoreText.textContent = 'Computer Score:';
 	if (playerScore > computerScore) {
 		rank.textContent = "You're winning!";
 	} else if (computerScore > playerScore) {
