@@ -19,7 +19,6 @@ let playerScore = 0;
 let computerScore = 0;
 let gameOn = false;
 var timeoutClosePopup;
-hideRestart();
 
 paperBtn.addEventListener('click', () => {
 	playRound('paper');
@@ -88,7 +87,7 @@ function outsidePopupClick(e) {
 
 function openPopup() {
 			popup.style.display = 'block';
-			timeoutClosePopup = setTimeout(closePopup, 3000);
+			timeoutClosePopup = setTimeout(closePopup, 4000);
 		}
 
 function restart() {
