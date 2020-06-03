@@ -12,6 +12,7 @@
 	font-size: 30px;
 	width: 100%;
 	margin: 2% 0 3% 0;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

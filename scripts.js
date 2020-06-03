@@ -1,4 +1,4 @@
-const header = document.querySelector('.header');
+const h1 = document.querySelector('h1');
 const weapon = document.querySelector('.weapon');
 const choices = document.querySelector('#choices');
 const pScoreDiv = document.querySelector('#pScoreDiv');
@@ -20,6 +20,9 @@ let computerScore = 0;
 let gameOn = false;
 var timeoutClosePopup;
 
+h1.addEventListener('click', () => {
+	changeh1TextStyle();
+});
 paperBtn.addEventListener('click', () => {
 	playRound('paper');
 });
@@ -109,6 +112,15 @@ function hideRestart() {
 		restartBtn.style.display = 'none';
 	} else {
 		restartBtn.style.display = 'initial';
+	}
+}
+
+function changeh1TextStyle() {
+	if (h1.textContent == 'Rock Paper Scissors') {
+		h1.innerHTML =
+			'R 0 ( |< _ |<sup>></sup> A |<sup>></sup> E R _ S ( | S S 0 R S';
+	} else {
+		h1.textContent = 'Rock Paper Scissors';
 	}
 }
 
