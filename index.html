@@ -12,20 +12,8 @@
 
 	<body>
 		<header class="header">
-			<h1>
-				Rock Paper Scissors
-			</h1>
+			<h1>R 0 ( |< _ |<sup>></sup> A |<sup>></sup> E R _ S ( | S S 0 R S</h1>
 		</header>
-
-		<div id="pScorDiv">
-			<p class="pScoreText"></p>
-			<p class="pScore"></p>
-		</div>
-
-		<div id="cScoreDiv">
-			<p class="cScoreText"></p>
-			<p class="cScore"></p>
-		</div>
 
 		<div>
 			<p class="weapon">
@@ -35,33 +23,41 @@
 
 		<div class="divBtnBkg">
 			<div class="btnWrapper">
-				<button class="rockBtn"></button>
-				<button class="paperBtn"></button>
-				<button class="scissorsBtn"></button>
+				<img class="rockBtn" src="assets/rock.svg"></img>
+				<img class="paperBtn" src="assets/paper.svg"></img>
+				<img class="scissorsBtn" src="assets/scissors.svg"></img>
 			</div>
 		</div>
 
 		<div>
-			<p id="rank">
+			<p id="introText">
 				Can you beat the computer? <br />
 				Play to find out!
 			</p>
 		</div>
 
-		<div>
-			<p id="choices"></p>
+		<div id="popup">
+			<div id="popupContent">
+				<p id="rank"></p>
+				<p id="choices"></p>
+				<p id="winner"></p>
+				<span id="closePopupBtn"> &times; </span>
+			</div>
 		</div>
 
 		<div>
-			<p id="winner"></p>
-		</div>
+			<p class="pScoreText"> </p>
+				<p class="pScore"> </p>
 
-		<div>
 			<button class="restartBtn">Restart Game</button>
+
+			<p class="cScoreText"> </p>
+				<p class="cScore"> </p>
+			
 		</div>
 
 		<footer>
-			created by <a href="https://github.com/sptyi" target="_blank">sptyi</a>
+			<a href="https://github.com/sptyi" target="_blank">created by sptyi</a>
 		</footer>
 
 		<script type="text/javascript" src="scripts.js"></script>

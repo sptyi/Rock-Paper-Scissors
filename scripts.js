@@ -13,10 +13,12 @@ const rockBtn = document.querySelector('.rockBtn');
 const paperBtn = document.querySelector('.paperBtn');
 const scissorsBtn = document.querySelector('.scissorsBtn');
 const restartBtn = document.querySelector('.restartBtn');
+const popup = document.querySelector('#popup');
+const closePopupBtn = document.querySelector('#closePopupBtn');
 let playerScore = 0;
 let computerScore = 0;
 let gameOn = false;
-hideRestart();
+var timeoutClosePopup;
 
 paperBtn.addEventListener('click', () => {
 	playRound('paper');
@@ -62,6 +64,32 @@ restartBtn.addEventListener('click', () => {
 	}
 });
 
+closePopupBtn.addEventListener('click', () => {
+	closePopup();
+});
+
+window.addEventListener('click', outsidePopupClick);
+
+function closePopup() {
+	popup.style.display = 'none';
+	clearTimeout(timeoutClosePopup);
+}
+
+function resetPopup() {
+	popup.style.cssText += 'animation-name: popupopen;';
+}
+
+function outsidePopupClick(e) {
+	if (e.target == popup) {
+		closePopup();
+	}
+}
+
+function openPopup() {
+	popup.style.display = 'block';
+	timeoutClosePopup = setTimeout(closePopup, 4000);
+}
+
 function restart() {
 	hideRestart();
 	playerScore = 0;
@@ -72,14 +100,15 @@ function restart() {
 	cScoreText.textContent = '';
 	winner.textContent = '';
 	choices.textContent = '';
-	rank.textContent = 'Play again!';
+	introText.style.display = 'initial';
+	introText.textContent = 'Play again!';
 }
 
 function hideRestart() {
 	if (gameOn == false) {
-		restartBtn.style.cssText += 'display: none';
+		restartBtn.style.display = 'none';
 	} else {
-		restartBtn.style.cssText += 'display: initial';
+		restartBtn.style.display = 'initial';
 	}
 }
 
@@ -98,7 +127,7 @@ function computerPlay() {
 
 function playerPaper() {
 	if (computerSelection == 'paper') {
-		winner.textContent = 'This round is a draw! You both chose paper.';
+		winner.textContent = 'This round is a draw!';
 	} else if (computerSelection == 'scissors') {
 		computerScore++;
 		winner.textContent = 'You lose this round! Scissors beats paper.';
@@ -113,7 +142,7 @@ function playerScissors() {
 		playerScore++;
 		winner.textContent = 'You win this round! Scissors beats paper.';
 	} else if (computerSelection == 'scissors') {
-		winner.textContent = 'This round is a draw! You both chose scissors.';
+		winner.textContent = 'This round is a draw!';
 	} else if (computerSelection == 'rock') {
 		computerScore++;
 		winner.textContent = 'You lose this round! Rock beats scissors.';
@@ -128,15 +157,26 @@ function playerRock() {
 		playerScore++;
 		winner.textContent = 'You win this round! Rock beats scissors.';
 	} else if (computerSelection == 'rock') {
-		winner.textContent = 'This round is a draw! You both chose rock.';
+		winner.textContent = 'This round is a draw!';
 	}
 }
 
 function playRound(playerSelection) {
 	gameOn = true;
 	hideRestart();
+	introText.style.display = 'none';
 	computerSelection = computerPlay();
-	choices.textContent = 'Computer chose ' + computerSelection + '.';
+	if (computerSelection == playerSelection) {
+		choices.textContent =
+			'Computer chose ' + computerSelection + ', and so did you.';
+	} else {
+		choices.textContent =
+			'Computer chose ' +
+			computerSelection +
+			', and you chose ' +
+			playerSelection +
+			'.';
+	}
 	if (playerSelection == 'paper') {
 		playerPaper();
 	} else if (playerSelection == 'scissors') {
@@ -145,13 +185,14 @@ function playRound(playerSelection) {
 		playerRock();
 	}
 	score(playerScore, computerScore);
+	openPopup();
 }
 
 function score(playerScore, computerScore) {
 	pScore.textContent = playerScore;
 	pScoreText.textContent = 'Your Score:';
 	cScore.textContent = computerScore;
-	cScoreText.textContent = 'Computer Score:';
+	cScoreText.textContent = 'Comp Score:';
 	if (playerScore > computerScore) {
 		rank.textContent = "You're winning!";
 	} else if (computerScore > playerScore) {
