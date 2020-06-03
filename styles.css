@@ -11,7 +11,7 @@
 .header {
 	font-size: 30px;
 	width: 100%;
-	margin-top: 5%;
+	margin: 2% 0 3% 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -33,37 +33,37 @@
 }
 
 :root {
-  --popup-duration: 0.5s;
+	--popup-duration: 0.5s;
 }
 
 #popup {
 	display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	height: 100%;
 	width: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
 	animation-name: popupopen;
-  animation-duration: var(--popup-duration);
+	animation-duration: var(--popup-duration);
 }
 
 #popupContent {
-	margin-top: 25%;
+	margin-top: 10%;
 	left: 50%;
 	width: 50%;
 	height: 0%;
 }
 
 @keyframes popupopen {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 #closePopupBtn {
@@ -129,8 +129,7 @@
 
 #introText {
 	font-size: 30px;
-	margin-bottom: 20px;
-	
+	margin: 50px 0 0 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -139,23 +138,9 @@
 	}
 }
 
-#pScoreDive {
-	position: absolute;
-	left: 25%;
-	top: 65%;
-}
-
-#cScoreDiv {
-	position: absolute;
-	right: 25%;
-	top: 65%;
-}
-
 .pScoreText {
-	position: fixed;
-	left: 25%;
-	top: 65%;
 	font-size: 30px;
+	display: inline-block;
 }
 
 @media screen and (max-width: 600px) {
@@ -165,10 +150,9 @@
 }
 
 .pScore {
-	position: fixed;
-	left: 25%;
-	top: 70%;
 	font-size: 30px;
+	display: inline-block;
+	margin-right: 10vw;
 }
 
 @media screen and (max-width: 600px) {
@@ -178,10 +162,9 @@
 }
 
 .cScoreText {
-	position: fixed;
-	right: 25%;
-	top: 65%;
 	font-size: 30px;
+	display: inline-block;
+	margin-left: 10vw;
 }
 
 @media screen and (max-width: 600px) {
@@ -191,10 +174,8 @@
 }
 
 .cScore {
-	position: fixed;
-	right: 25%;
-	top: 70%;
 	font-size: 30px;
+	display: inline-block;
 }
 
 @media screen and (max-width: 600px) {
@@ -205,19 +186,16 @@
 
 .btnWrapper {
 	top: 50%;
-	height: inherit;
-	width: inherit;
+	width: 100%;
 }
 
 .rockBtn {
-	background: url(./assets/rock.svg);
-	background-repeat: no-repeat;
 	border: none;
 	outline: none;
-	margin: 10px 50px 50px 0;
-	padding-top: 50px;
-	height: 200px;
+	margin: 0 5vw 0 0;
+	padding-bottom: 50px;
 	width: 200px;
+	height: auto;
 }
 
 .rockBtn:hover {
@@ -230,13 +208,11 @@
 }
 
 .paperBtn {
-	background: url(./assets/paper.svg);
-	background-repeat: no-repeat;
 	border: none;
 	outline: none;
-	margin: 10px 50px 50px 50px;
+	margin: 0 5vw 0 5vw;
+	width: auto;
 	height: 200px;
-	width: 200px;
 }
 
 .paperBtn:hover {
@@ -249,13 +225,11 @@
 }
 
 .scissorsBtn {
-	background: url(./assets/scissors.svg);
-	background-repeat: no-repeat;
 	border: none;
 	outline: none;
-	margin: 10px 0 50px 50px;
-	height: 200px;
+	margin: 0 0 0 5vw;
 	width: 200px;
+	height: auto;
 }
 
 .scissorsBtn:hover {
@@ -267,6 +241,22 @@
 	transform: scale(0.98);
 }
 
+@media screen and (max-width: 600px) {
+	.rockBtn,
+	.paperBtn,
+	.scissorsBtn {
+		width: 25vw;
+		margin: 0 3vw 0 3vw;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.rockBtn,
+	.scissorsBtn {
+		padding-bottom: 55px;
+	}
+}
+
 .restartBtn {
 	display: none;
 	outline: none;
@@ -276,6 +266,7 @@
 	height: 100px;
 	font-size: 20px;
 	box-shadow: #000 2px 2px 5px;
+	margin-top: 25px;
 }
 
 .restartBtn:hover {
@@ -295,7 +286,7 @@ footer {
 	position: absolute;
 	font-size: 18px;
 	top: 90vh;
-	left: 90vw;
+	left: 80vw;
 }
 
 @media screen and (max-width: 600px) {

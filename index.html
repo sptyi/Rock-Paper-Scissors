@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap"
+			rel="stylesheet"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rock Paper Scissors</title>
+	</head>
 
-<head>
-	<link rel="stylesheet" href="styles.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Rock Paper Scissors</title>
-</head>
+	<body>
+		<header class="header">
+			<h1>R 0 ( |< _ |<sup>></sup> A |<sup>></sup> E R _ S ( | S S 0 R S</h1>
+		</header>
 
-<body>
-	<header class="header">
-		<h1>R 0 ( |< _ |<sup>></sup> A |<sup>></sup> E R _ S ( | S S 0 R S</h1>
-	</header>
+		<div>
+			<p class="weapon">
+				Choose your weapon:
+			</p>
+		</div>
 
-	<div id="pScorDiv">
-		<p class="pScoreText"></p>
-		<p class="pScore"></p>
-	</div>
-
-	<div id="cScoreDiv">
-		<p class="cScoreText"></p>
-		<p class="cScore"></p>
-	</div>
-
-	<div>
-		<p class="weapon">
-			Choose your weapon:
-		</p>
-	</div>
-
-	<div class="divBtnBkg">
-		<div class="btnWrapper">
-			<button class="rockBtn"></button>
-				<button class="paperBtn"></button>
-				<button class="scissorsBtn"></button>
+		<div class="divBtnBkg">
+			<div class="btnWrapper">
+				<img class="rockBtn" src="assets/rock.svg"></img>
+				<img class="paperBtn" src="assets/paper.svg"></img>
+				<img class="scissorsBtn" src="assets/scissors.svg"></img>
 			</div>
 		</div>
 
@@ -44,17 +36,24 @@
 			</p>
 		</div>
 
-			<div id='popup'>
-				<div id='popupContent'>
-					<p id='rank'></p>
-					<p id="choices"></p>
-					<p id="winner"></p>
-					<span id='closePopupBtn'> &times; </span>
-				</div>
+		<div id="popup">
+			<div id="popupContent">
+				<p id="rank"></p>
+				<p id="choices"></p>
+				<p id="winner"></p>
+				<span id="closePopupBtn"> &times; </span>
 			</div>
+		</div>
 
 		<div>
+			<p class="pScoreText"> </p>
+				<p class="pScore"> </p>
+
 			<button class="restartBtn">Restart Game</button>
+
+			<p class="cScoreText"> </p>
+				<p class="cScore"> </p>
+			
 		</div>
 
 		<footer>

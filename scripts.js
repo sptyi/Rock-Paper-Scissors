@@ -80,118 +80,124 @@ function resetPopup() {
 }
 
 function outsidePopupClick(e) {
-			if (e.target == popup) {
-				closePopup();
-			}
-		}
+	if (e.target == popup) {
+		closePopup();
+	}
+}
 
 function openPopup() {
-			popup.style.display = 'block';
-			timeoutClosePopup = setTimeout(closePopup, 4000);
-		}
+	popup.style.display = 'block';
+	timeoutClosePopup = setTimeout(closePopup, 4000);
+}
 
 function restart() {
-			hideRestart();
-			playerScore = 0;
-			computerScore = 0;
-			pScore.textContent = '';
-			cScore.textContent = '';
-			pScoreText.textContent = '';
-			cScoreText.textContent = '';
-			winner.textContent = '';
-			choices.textContent = '';
-			introText.style.display = 'initial';
-			introText.textContent = 'Play again!';
-		}
+	hideRestart();
+	playerScore = 0;
+	computerScore = 0;
+	pScore.textContent = '';
+	cScore.textContent = '';
+	pScoreText.textContent = '';
+	cScoreText.textContent = '';
+	winner.textContent = '';
+	choices.textContent = '';
+	introText.style.display = 'initial';
+	introText.textContent = 'Play again!';
+}
 
 function hideRestart() {
-			if (gameOn == false) {
-				restartBtn.style.display = 'none';
-			} else {
-				restartBtn.style.display = 'initial';
-			}
-		}
+	if (gameOn == false) {
+		restartBtn.style.display = 'none';
+	} else {
+		restartBtn.style.display = 'initial';
+	}
+}
 
 function computerPlay() {
-			let num = Math.floor(Math.random() * 3);
-			let computerSelection;
-			if (num == 0) {
-				computerSelection = 'rock';
-			} else if (num == 1) {
-				computerSelection = 'paper';
-			} else {
-				computerSelection = 'scissors';
-			}
-			return computerSelection;
-		}
+	let num = Math.floor(Math.random() * 3);
+	let computerSelection;
+	if (num == 0) {
+		computerSelection = 'rock';
+	} else if (num == 1) {
+		computerSelection = 'paper';
+	} else {
+		computerSelection = 'scissors';
+	}
+	return computerSelection;
+}
 
 function playerPaper() {
-			if (computerSelection == 'paper') {
-				winner.textContent = 'This round is a draw!';
-			} else if (computerSelection == 'scissors') {
-				computerScore++;
-				winner.textContent = 'You lose this round! Scissors beats paper.';
-			} else if (computerSelection == 'rock') {
-				playerScore++;
-				winner.textContent = 'You win this round! paper beats rock.';
-			}
-		}
+	if (computerSelection == 'paper') {
+		winner.textContent = 'This round is a draw!';
+	} else if (computerSelection == 'scissors') {
+		computerScore++;
+		winner.textContent = 'You lose this round! Scissors beats paper.';
+	} else if (computerSelection == 'rock') {
+		playerScore++;
+		winner.textContent = 'You win this round! paper beats rock.';
+	}
+}
 
 function playerScissors() {
-			if (computerSelection == 'paper') {
-				playerScore++;
-				winner.textContent = 'You win this round! Scissors beats paper.';
-			} else if (computerSelection == 'scissors') {
-				winner.textContent = 'This round is a draw!';
-			} else if (computerSelection == 'rock') {
-				computerScore++;
-				winner.textContent = 'You lose this round! Rock beats scissors.';
-			}
-		}
+	if (computerSelection == 'paper') {
+		playerScore++;
+		winner.textContent = 'You win this round! Scissors beats paper.';
+	} else if (computerSelection == 'scissors') {
+		winner.textContent = 'This round is a draw!';
+	} else if (computerSelection == 'rock') {
+		computerScore++;
+		winner.textContent = 'You lose this round! Rock beats scissors.';
+	}
+}
 
 function playerRock() {
-			if (computerSelection == 'paper') {
-				computerScore++;
-				winner.textContent = 'You lose this round! Paper beats rock.';
-			} else if (computerSelection == 'scissors') {
-				playerScore++;
-				winner.textContent = 'You win this round! Rock beats scissors.';
-			} else if (computerSelection == 'rock') {
-				winner.textContent = 'This round is a draw!';
-			}
-		}
+	if (computerSelection == 'paper') {
+		computerScore++;
+		winner.textContent = 'You lose this round! Paper beats rock.';
+	} else if (computerSelection == 'scissors') {
+		playerScore++;
+		winner.textContent = 'You win this round! Rock beats scissors.';
+	} else if (computerSelection == 'rock') {
+		winner.textContent = 'This round is a draw!';
+	}
+}
 
 function playRound(playerSelection) {
-			gameOn = true;
-			hideRestart();
-			introText.style.display = 'none';
-			computerSelection = computerPlay();
-			if (computerSelection == playerSelection) {
-				choices.textContent = 'Computer chose ' + computerSelection + ', and so did you.';
-			} else {
-				choices.textContent = 'Computer chose ' + computerSelection + ', and you chose ' + playerSelection + '.';
-			}
-			if (playerSelection == 'paper') {
-				playerPaper();
-			} else if (playerSelection == 'scissors') {
-				playerScissors();
-			} else {
-				playerRock();
-			}
-			score(playerScore, computerScore);
-			openPopup();
-		}
+	gameOn = true;
+	hideRestart();
+	introText.style.display = 'none';
+	computerSelection = computerPlay();
+	if (computerSelection == playerSelection) {
+		choices.textContent =
+			'Computer chose ' + computerSelection + ', and so did you.';
+	} else {
+		choices.textContent =
+			'Computer chose ' +
+			computerSelection +
+			', and you chose ' +
+			playerSelection +
+			'.';
+	}
+	if (playerSelection == 'paper') {
+		playerPaper();
+	} else if (playerSelection == 'scissors') {
+		playerScissors();
+	} else {
+		playerRock();
+	}
+	score(playerScore, computerScore);
+	openPopup();
+}
 
 function score(playerScore, computerScore) {
-			pScore.textContent = playerScore;
-			pScoreText.textContent = 'Your Score:';
-			cScore.textContent = computerScore;
-			cScoreText.textContent = 'Computer Score:';
-			if (playerScore > computerScore) {
-				rank.textContent = "You're winning!";
-			} else if (computerScore > playerScore) {
-				rank.textContent = "Uh-oh, you're losing.";
-			} else {
-				rank.textContent = "So close, but it's a tie.";
-			}
-		}
+	pScore.textContent = playerScore;
+	pScoreText.textContent = 'Your Score:';
+	cScore.textContent = computerScore;
+	cScoreText.textContent = 'Comp Score:';
+	if (playerScore > computerScore) {
+		rank.textContent = "You're winning!";
+	} else if (computerScore > playerScore) {
+		rank.textContent = "Uh-oh, you're losing.";
+	} else {
+		rank.textContent = "So close, but it's a tie.";
+	}
+}
